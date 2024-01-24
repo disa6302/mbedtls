@@ -172,7 +172,7 @@ static inline void psa_key_slot_clear_bits( psa_key_slot_t *slot,
  * \retval #PSA_SUCCESS
  *         Success. This includes the case of a key slot that was
  *         already fully wiped.
- * \retval #PSA_ERROR_CORRUPTION_DETECTED
+ * \retval #PSA_ERROR_CORRUPTION_DETECTED  \emptydescription
  */
 psa_status_t psa_wipe_key_slot( psa_key_slot_t *slot );
 

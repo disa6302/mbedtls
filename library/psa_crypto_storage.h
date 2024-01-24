@@ -93,11 +93,11 @@ int psa_is_key_present_in_storage( const mbedtls_svc_key_id_t key );
  * \param[in] data          Buffer containing the key data.
  * \param data_length       The number of bytes that make up the key data.
  *
- * \retval #PSA_SUCCESS
- * \retval #PSA_ERROR_INSUFFICIENT_MEMORY
- * \retval #PSA_ERROR_INSUFFICIENT_STORAGE
- * \retval #PSA_ERROR_STORAGE_FAILURE
- * \retval #PSA_ERROR_ALREADY_EXISTS
+ * \retval #PSA_SUCCESS  \emptydescription
+ * \retval #PSA_ERROR_INSUFFICIENT_MEMORY  \emptydescription
+ * \retval #PSA_ERROR_INSUFFICIENT_STORAGE  \emptydescription
+ * \retval #PSA_ERROR_STORAGE_FAILURE  \emptydescription
+ * \retval #PSA_ERROR_ALREADY_EXISTS  \emptydescription
  */
 psa_status_t psa_save_persistent_key( const psa_core_key_attributes_t *attr,
                                       const uint8_t *data,
@@ -122,10 +122,10 @@ psa_status_t psa_save_persistent_key( const psa_core_key_attributes_t *attr,
  * \param[out] data         Pointer to an allocated key data buffer on return.
  * \param[out] data_length  The number of bytes that make up the key data.
  *
- * \retval #PSA_SUCCESS
- * \retval #PSA_ERROR_INSUFFICIENT_MEMORY
- * \retval #PSA_ERROR_STORAGE_FAILURE
- * \retval #PSA_ERROR_DOES_NOT_EXIST
+ * \retval #PSA_SUCCESS  \emptydescription
+ * \retval #PSA_ERROR_INSUFFICIENT_MEMORY  \emptydescription
+ * \retval #PSA_ERROR_STORAGE_FAILURE  \emptydescription
+ * \retval #PSA_ERROR_DOES_NOT_EXIST  \emptydescription
  */
 psa_status_t psa_load_persistent_key( psa_core_key_attributes_t *attr,
                                       uint8_t **data,
@@ -140,7 +140,7 @@ psa_status_t psa_load_persistent_key( psa_core_key_attributes_t *attr,
  * \retval #PSA_SUCCESS
  *         The key was successfully removed,
  *         or the key did not exist.
- * \retval #PSA_ERROR_STORAGE_FAILURE
+ * \retval #PSA_ERROR_STORAGE_FAILURE  \emptydescription
  */
 psa_status_t psa_destroy_persistent_key( const mbedtls_svc_key_id_t key );
 
@@ -182,10 +182,10 @@ void psa_format_key_data_for_storage( const uint8_t *data,
  * \param[out] attr            On success, the attribute structure is filled
  *                             with the loaded key metadata.
  *
- * \retval #PSA_SUCCESS
- * \retval #PSA_ERROR_INSUFFICIENT_STORAGE
- * \retval #PSA_ERROR_INSUFFICIENT_MEMORY
- * \retval #PSA_ERROR_STORAGE_FAILURE
+ * \retval #PSA_SUCCESS  \emptydescription
+ * \retval #PSA_ERROR_INSUFFICIENT_STORAGE  \emptydescription
+ * \retval #PSA_ERROR_INSUFFICIENT_MEMORY  \emptydescription
+ * \retval #PSA_ERROR_STORAGE_FAILURE  \emptydescription
  */
 psa_status_t psa_parse_key_data_from_storage( const uint8_t *storage_data,
                                               size_t storage_data_length,
@@ -318,9 +318,9 @@ static inline void psa_crypto_prepare_transaction(
  * You may call this function multiple times during a transaction to
  * atomically update the transaction state.
  *
- * \retval #PSA_SUCCESS
- * \retval #PSA_ERROR_INSUFFICIENT_STORAGE
- * \retval #PSA_ERROR_STORAGE_FAILURE
+ * \retval #PSA_SUCCESS  \emptydescription
+ * \retval #PSA_ERROR_INSUFFICIENT_STORAGE  \emptydescription
+ * \retval #PSA_ERROR_STORAGE_FAILURE  \emptydescription
  */
 psa_status_t psa_crypto_save_transaction( void );
 
@@ -334,7 +334,7 @@ psa_status_t psa_crypto_save_transaction( void );
  *         #psa_crypto_transaction.
  * \retval #PSA_ERROR_DOES_NOT_EXIST
  *         There is no ongoing transaction.
- * \retval #PSA_ERROR_STORAGE_FAILURE
+ * \retval #PSA_ERROR_STORAGE_FAILURE  \emptydescription
  */
 psa_status_t psa_crypto_load_transaction( void );
 
@@ -373,8 +373,8 @@ psa_status_t psa_crypto_stop_transaction( void );
  *
  * \retval #PSA_SUCCESS
  *         Success
- * \retval #PSA_ERROR_STORAGE_FAILURE
- * \retval #PSA_ERROR_INSUFFICIENT_STORAGE
+ * \retval #PSA_ERROR_STORAGE_FAILURE  \emptydescription
+ * \retval #PSA_ERROR_INSUFFICIENT_STORAGE  \emptydescription
  * \retval #PSA_ERROR_NOT_PERMITTED
  *         The entropy seed file already exists.
  */
