@@ -249,8 +249,8 @@ psa_status_t psa_driver_wrapper_verify_hash( psa_key_slot_t *slot,
  * \param[out] expected_size    On success, a byte size large enough to contain
  *                              the declared key.
  *
- * \retval #PSA_SUCCESS
- * \retval #PSA_ERROR_NOT_SUPPORTED
+ * \retval #PSA_SUCCESS \emptydescription
+ * \retval #PSA_ERROR_NOT_SUPPORTED \emptydescription
  */
 static psa_status_t get_expected_key_size( const psa_key_attributes_t *attributes,
                                            size_t *expected_size )
