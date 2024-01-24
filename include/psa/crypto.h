@@ -709,7 +709,7 @@ psa_status_t psa_import_key(const psa_key_attributes_t *attributes,
  * \retval #PSA_ERROR_INVALID_HANDLE \emptydescription
  * \retval #PSA_ERROR_NOT_PERMITTED
  *         The key does not have the #PSA_KEY_USAGE_EXPORT flag.
- * \retval #PSA_ERROR_NOT_SUPPORTED 
+ * \retval #PSA_ERROR_NOT_SUPPORTED  \emptydescription
  * \retval #PSA_ERROR_BUFFER_TOO_SMALL 
  *         The size of the \p data buffer is too small. You can determine a
  *         sufficient buffer size by calling
@@ -1566,7 +1566,7 @@ psa_status_t psa_mac_verify_finish(psa_mac_operation_t *operation,
  *
  * \param[in,out] operation Initialized MAC operation.
  *
- * \retval #PSA_SUCCESS
+ * \retval #PSA_SUCCESS \emptydescription
  * \retval #PSA_ERROR_COMMUNICATION_FAILURE \emptydescription
  * \retval #PSA_ERROR_HARDWARE_FAILURE \emptydescription
  * \retval #PSA_ERROR_CORRUPTION_DETECTED \emptydescription
@@ -2043,7 +2043,7 @@ psa_status_t psa_cipher_finish(psa_cipher_operation_t *operation,
  *
  * \param[in,out] operation     Initialized cipher operation.
  *
- * \retval #PSA_SUCCESS
+ * \retval #PSA_SUCCESS \emptydescription
  * \retval #PSA_ERROR_COMMUNICATION_FAILURE \emptydescription
  * \retval #PSA_ERROR_HARDWARE_FAILURE \emptydescription
  * \retval #PSA_ERROR_CORRUPTION_DETECTED \emptydescription
@@ -2834,7 +2834,7 @@ psa_status_t psa_aead_abort(psa_aead_operation_t *operation);
  * \param[out] signature_length On success, the number of bytes
  *                              that make up the returned signature value.
  *
- * \retval #PSA_SUCCESS
+ * \retval #PSA_SUCCESS \emptydescription
  * \retval #PSA_ERROR_INVALID_HANDLE \emptydescription
  * \retval #PSA_ERROR_NOT_PERMITTED \emptydescription
  * \retval #PSA_ERROR_BUFFER_TOO_SMALL
@@ -2940,7 +2940,7 @@ psa_status_t psa_verify_hash(mbedtls_svc_key_id_t key,
  * \param[out] output_length    On success, the number of bytes
  *                              that make up the returned output.
  *
- * \retval #PSA_SUCCESS
+ * \retval #PSA_SUCCESS \emptydescription
  * \retval #PSA_ERROR_INVALID_HANDLE \emptydescription
  * \retval #PSA_ERROR_NOT_PERMITTED \emptydescription
  * \retval #PSA_ERROR_BUFFER_TOO_SMALL
@@ -3000,7 +3000,7 @@ psa_status_t psa_asymmetric_encrypt(mbedtls_svc_key_id_t key,
  * \param[out] output_length    On success, the number of bytes
  *                              that make up the returned output.
  *
- * \retval #PSA_SUCCESS
+ * \retval #PSA_SUCCESS \emptydescription
  * \retval #PSA_ERROR_INVALID_HANDLE \emptydescription
  * \retval #PSA_ERROR_NOT_PERMITTED \emptydescription
  * \retval #PSA_ERROR_BUFFER_TOO_SMALL
@@ -3133,7 +3133,7 @@ static psa_key_derivation_operation_t psa_key_derivation_operation_init(void);
  *         \c alg is not a key derivation algorithm.
  * \retval #PSA_ERROR_NOT_SUPPORTED
  *         \c alg is not supported or is not a key derivation algorithm.
- * \retval #PSA_ERROR_INSUFFICIENT_MEMORY
+ * \retval #PSA_ERROR_INSUFFICIENT_MEMORY \emptydescription
  * \retval #PSA_ERROR_COMMUNICATION_FAILURE \emptydescription
  * \retval #PSA_ERROR_HARDWARE_FAILURE \emptydescription
  * \retval #PSA_ERROR_CORRUPTION_DETECTED \emptydescription
@@ -3581,7 +3581,7 @@ psa_status_t psa_key_derivation_output_key(
  *
  * \param[in,out] operation    The operation to abort.
  *
- * \retval #PSA_SUCCESS
+ * \retval #PSA_SUCCESS \emptydescription
  * \retval #PSA_ERROR_COMMUNICATION_FAILURE \emptydescription
  * \retval #PSA_ERROR_HARDWARE_FAILURE \emptydescription
  * \retval #PSA_ERROR_CORRUPTION_DETECTED \emptydescription
