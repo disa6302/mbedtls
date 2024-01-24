@@ -1029,10 +1029,10 @@ psa_status_t psa_copy_key_material_into_slot( psa_key_slot_t *slot,
  * \param[in] data      Buffer containing the key material to parse and import.
  * \param data_length   Size of \p data in bytes.
  *
- * \retval #PSA_SUCCESS
- * \retval #PSA_ERROR_INVALID_ARGUMENT
- * \retval #PSA_ERROR_NOT_SUPPORTED
- * \retval #PSA_ERROR_INSUFFICIENT_MEMORY
+ * \retval #PSA_SUCCESS  \emptydescription
+ * \retval #PSA_ERROR_INVALID_ARGUMENT  \emptydescription
+ * \retval #PSA_ERROR_NOT_SUPPORTED  \emptydescription
+ * \retval #PSA_ERROR_INSUFFICIENT_MEMORY  \emptydescription
  */
 static psa_status_t psa_import_key_into_slot( psa_key_slot_t *slot,
                                               const uint8_t *data,
@@ -4661,7 +4661,7 @@ static psa_status_t psa_cipher_update_ecb_internal(
     }
 
     status = PSA_SUCCESS;
-
+    (void) output_size;
 exit:
     return( status );
 }
