@@ -1601,6 +1601,7 @@ void mpi_mul_hlp( size_t i, mbedtls_mpi_uint *s, mbedtls_mpi_uint *d, mbedtls_mp
         *d += c; c = ( *d < c ); d++;
     }
     while( c != 0 );
+    (void) t;
 }
 
 /*
