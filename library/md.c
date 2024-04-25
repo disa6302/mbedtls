@@ -225,8 +225,7 @@ const mbedtls_md_info_t *mbedtls_md_info_from_string(const char *md_name)
 
 const mbedtls_md_info_t *mbedtls_md_info_from_type(mbedtls_md_type_t md_type)
 {
-    printf("MD_TYPE:%d\n", md_type);
-    return &mbedtls_sha256_info;
+    printf("MD_TYPE:%u\n", md_type);
     switch (md_type) {
 #if defined(MBEDTLS_MD2_C)
         case MBEDTLS_MD_MD2:
