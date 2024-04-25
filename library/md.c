@@ -91,7 +91,7 @@ const mbedtls_md_info_t mbedtls_sha1_info = {
 };
 #endif
 
-#if defined(MBEDTLS_SHA256_C)
+//#if defined(MBEDTLS_SHA256_C)
 const mbedtls_md_info_t mbedtls_sha224_info = {
     "SHA224",
     MBEDTLS_MD_SHA224,
@@ -105,7 +105,7 @@ const mbedtls_md_info_t mbedtls_sha256_info = {
     32,
     64,
 };
-#endif
+//#endif
 
 #if defined(MBEDTLS_SHA512_C)
 #if !defined(MBEDTLS_SHA512_NO_SHA384)
