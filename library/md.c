@@ -249,6 +249,7 @@ const mbedtls_md_info_t *mbedtls_md_info_from_type(mbedtls_md_type_t md_type)
 #endif
 #if defined(MBEDTLS_SHA1_C)
         case MBEDTLS_MD_SHA1:
+            printf("SHA 1 selected\n");
             return &mbedtls_sha1_info;
 #endif
 #if defined(MBEDTLS_SHA256_C)
