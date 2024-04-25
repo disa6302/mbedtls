@@ -229,6 +229,7 @@ const mbedtls_md_info_t *mbedtls_md_info_from_type(mbedtls_md_type_t md_type)
     printf("MD_TYPE SHA:%u\n", md_type);
 #else
     printf("MD_TYPE OTHER: %u\n", md_type);
+#endif
     switch (md_type) {
 #if defined(MBEDTLS_MD2_C)
         case MBEDTLS_MD_MD2:
