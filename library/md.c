@@ -91,7 +91,7 @@ const mbedtls_md_info_t mbedtls_sha1_info = {
 };
 #endif
 
-//#if defined(MBEDTLS_SHA256_C)
+#if defined(MBEDTLS_SHA256_C)
 const mbedtls_md_info_t mbedtls_sha224_info = {
     "SHA224",
     MBEDTLS_MD_SHA224,
@@ -105,7 +105,7 @@ const mbedtls_md_info_t mbedtls_sha256_info = {
     32,
     64,
 };
-//#endif
+#endif
 
 #if defined(MBEDTLS_SHA512_C)
 #if !defined(MBEDTLS_SHA512_NO_SHA384)
@@ -225,48 +225,50 @@ const mbedtls_md_info_t *mbedtls_md_info_from_string(const char *md_name)
 
 const mbedtls_md_info_t *mbedtls_md_info_from_type(mbedtls_md_type_t md_type)
 {
-    printf("MD_TYPE:%u\n", md_type);
-    return &mbedtls_sha256_info;
-//    switch (md_type) {
-//#if defined(MBEDTLS_MD2_C)
-//        case MBEDTLS_MD_MD2:
-//            return &mbedtls_md2_info;
-//#endif
-//#if defined(MBEDTLS_MD4_C)
-//        case MBEDTLS_MD_MD4:
-//            return &mbedtls_md4_info;
-//#endif
-//#if defined(MBEDTLS_MD5_C)
-//        case MBEDTLS_MD_MD5:
-//            return &mbedtls_md5_info;
-//#endif
-//#if defined(MBEDTLS_RIPEMD160_C)
-//        case MBEDTLS_MD_RIPEMD160:
-//            return &mbedtls_ripemd160_info;
-//#endif
-//#if defined(MBEDTLS_SHA1_C)
-//        case MBEDTLS_MD_SHA1:
-//            return &mbedtls_sha1_info;
-//#endif
-//#if defined(MBEDTLS_SHA256_C)
-//            printf("SHA256 enabled\n");
-//        case MBEDTLS_MD_SHA224:
-//            return &mbedtls_sha224_info;
-//        case MBEDTLS_MD_SHA256:
-//            printf("SHA256 enabled again\n");
-//            return &mbedtls_sha256_info;
-//#endif
-//#if defined(MBEDTLS_SHA512_C)
-//#if !defined(MBEDTLS_SHA512_NO_SHA384)
-//        case MBEDTLS_MD_SHA384:
-//            return &mbedtls_sha384_info;
-//#endif
-//        case MBEDTLS_MD_SHA512:
-//            return &mbedtls_sha512_info;
-//#endif
-//        default:
-//            return NULL;
-//    }
+#if defined(MBEDTLS_SHA256_C)
+    printf("MD_TYPE SHA:%u\n", md_type);
+#else
+    printf("MD_TYPE OTHER: %u\n", md_type);
+    switch (md_type) {
+#if defined(MBEDTLS_MD2_C)
+        case MBEDTLS_MD_MD2:
+            return &mbedtls_md2_info;
+#endif
+#if defined(MBEDTLS_MD4_C)
+        case MBEDTLS_MD_MD4:
+            return &mbedtls_md4_info;
+#endif
+#if defined(MBEDTLS_MD5_C)
+        case MBEDTLS_MD_MD5:
+            return &mbedtls_md5_info;
+#endif
+#if defined(MBEDTLS_RIPEMD160_C)
+        case MBEDTLS_MD_RIPEMD160:
+            return &mbedtls_ripemd160_info;
+#endif
+#if defined(MBEDTLS_SHA1_C)
+        case MBEDTLS_MD_SHA1:
+            return &mbedtls_sha1_info;
+#endif
+#if defined(MBEDTLS_SHA256_C)
+            printf("SHA256 enabled\n");
+        case MBEDTLS_MD_SHA224:
+            return &mbedtls_sha224_info;
+        case MBEDTLS_MD_SHA256:
+            printf("SHA256 enabled again\n");
+            return &mbedtls_sha256_info;
+#endif
+#if defined(MBEDTLS_SHA512_C)
+#if !defined(MBEDTLS_SHA512_NO_SHA384)
+        case MBEDTLS_MD_SHA384:
+            return &mbedtls_sha384_info;
+#endif
+        case MBEDTLS_MD_SHA512:
+            return &mbedtls_sha512_info;
+#endif
+        default:
+            return NULL;
+    }
 }
 
 void mbedtls_md_init(mbedtls_md_context_t *ctx)
